@@ -1,39 +1,55 @@
 variable "aws_access_key" {
-    description = "Access key for AWS account"
-    default = ""
+  description = "Access key for AWS account"
+  default     = ""
 }
 
 variable "aws_secret_key" {
-    description = "Secret key for AWS account"
-    default = ""
+  description = "Secret key for AWS account"
+  default     = ""
 }
 
 variable "aws_region" {
-    description = "Region for the AWS Account"
-    default = "eu-central-1"
+  description = "Region for the AWS Account"
+  default     = "eu-central-1"
 }
 
 variable "route53_zone" {
-    description = "Domain name and hosted zone in Route53"
+  description = "Domain name and hosted zone in Route53"
 }
 
 variable "route53_name" {
-    description = "Hostname prefix used for Rancher Server"
-    default = "mbh"
+  description = "Hostname prefix used for Rancher Server"
+  default     = "mbh"
 }
 
 variable "github_access_key" {
-    description = "Access key for the main user from Github"
-    default = ""
+  description = "Access key for the main user from Github"
+  default     = ""
 }
 
 variable "github_secret_key" {
-    description = "Access Secret Key for the main user from Github"
-    default = "" 
+  description = "Access Secret Key for the main user from Github"
+  default     = ""
 }
 
+variable "github_token" {
+  description = "Token to access Github from Terraform"
+  default     = ""
+}
+
+variable "github_organization" {
+  description = "Organization to add to Rancher from Github"
+  default     = ""
+}
+
+variable "github_team" {
+  description = "Team to add to Rancher from Github"
+  default     = ""
+}
+
+
 variable "rancher_bootstrap_password" {
-    description = "Rancher's bootstrap password"
+  description = "Rancher's bootstrap password"
 }
 
 variable "sg_name" {
@@ -55,5 +71,12 @@ variable "cloud_provider_role" {
   description = "IAM Role to attach to EC2 instances to enable cloud_provider"
   default     = ""
 }
+
+variable "app_cluster_count" {
+  type        = number
+  description = "Number of desired application clusters"
+  default     = 0
+}
+
 
 
