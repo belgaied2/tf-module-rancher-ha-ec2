@@ -21,7 +21,7 @@ module "rancher_infra" {
 }
 # RKE cluster
 module "rke_cluster" {
-  source    = "github.com/rawmind0/tf-module-rke-cluster"
+  source    = "github.com/belgaied2/tf-module-rke-cluster"
   rke_nodes = module.rancher_infra.rancher_nodes
   rke = {
     dind               = false
