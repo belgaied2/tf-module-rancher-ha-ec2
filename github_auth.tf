@@ -32,19 +32,19 @@ resource "rancher2_bootstrap" "admin" {
   depends_on = [null_resource.rancher_availability_check]
 }
 
-module "rancher2_github" {
-  source            = "github.com/belgaied2/tf-module-rancher-github"
-  github_access_key = var.github_access_key
-  github_secret_key = var.github_secret_key
-  github_token      = var.github_token
-  api_url           = rancher2_bootstrap.admin.url
-  api_token         = rancher2_bootstrap.admin.token
-  organization      = var.github_organization
-  admin_group_principal_id = {
-    is_team = true
-    name    = var.github_team
-  }
-}
+# module "rancher2_github" {
+#   source            = "github.com/belgaied2/tf-module-rancher-github"
+#   github_access_key = var.github_access_key
+#   github_secret_key = var.github_secret_key
+#   github_token      = var.github_token
+#   api_url           = rancher2_bootstrap.admin.url
+#   api_token         = rancher2_bootstrap.admin.token
+#   organization      = var.github_organization
+#   admin_group_principal_id = {
+#     is_team = true
+#     name    = var.github_team
+#   }
+# }
 
 
 # Provider config for admin
